@@ -10,11 +10,12 @@ Install jptax using pip:
 pip install jptax
 ```
 
-社会保険料を計算する。
+社会保険料（協会けんぽ）を計算する。
 
 ```python
+>>> from datetime import date
 >>> from jptax.insurance import Insurance
->>> insurance = Insurance()
+>>> insurance = Insurance(date(2024, 3, 25)) # 支給日
 >>> deduction = insurance.calculate(
 ...   510000, # 支給額
 ...   500000, # 標準報酬月額
